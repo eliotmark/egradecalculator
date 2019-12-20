@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliot's Great Grade Calculator</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<div class="title">
+    <h1>GRADE CALCULATOR</h1>
+</div>
+
+<table align="center" class="w3-centered w3-hoverable w3-card">
+    <tr>
+        <th>Category</th>
+        <th>Grades (%)</th>
+        <th>Weight (%)</th>
+    </tr>
+    <tr>
+        <td>Homework</td>
+        <td> <input type="text" id="homeworkGrades" value="80, 85, 90" placeholder="Enter Scores"> </td>
+        <td> <input type="text" id="homeworkWeight" value="15" placeholder="Enter Weight"> </td>
+    </tr>
+    <tr>
+        <td>Classwork</td>
+        <td> <input type="text" id="classworkGrades" value="70, 80, 90" placeholder="Enter Scores"> </td>
+        <td> <input type="text" id="classworkWeight" value="15" placeholder="Enter Weight"> </td>
+    </tr>
+    <tr>
+        <td>Tests</td>
+        <td> <input type="text" id="testGrades" value="75, 80, 90" placeholder="Enter Scores"> </td>
+        <td> <input type="text" id="testWeight" value="20" placeholder="Enter Weight"> </td>
+    </tr>
+    <tr>
+        <td>Participation</td>
+        <td> <input type="text" id="participationGrades" value="85, 90, 100" placeholder="Enter Scores"> </td>
+        <td> <input type="text" id="participationWeight" value="15" placeholder="Enter Weight"> </td>
+    </tr>
+    <tr>
+        <td>Projects</td>
+        <td> <input type="text" id="projectGrades" value="85, 90, 90" placeholder="Enter Scores"> </td>
+        <td> <input type="text" id="projectWeight" value="20" placeholder="Enter Weight"> </td>
+    </tr>
+</table>
+
+<h1> </h1>
+
+<table align="center" class="w3-centered w3-hoverable w3-card">
+    <tr>
+        <th>Desired Grade in Class</th>
+        <th>Weight (%) of Final Exam</th>
+    </tr>
+    <tr>
+        <td> <input type="text" id="desiredGrade" value="90" placeholder="Enter Grade"> </td>
+        <td> <input type="text" id="finalWeight" value="15" placeholder="Enter Weight"> </td>
+    </tr>
+</table>
+
+<h1> </h1>
+
+<button class="w3-btn w3-black w3-round" onclick="calculateCurrentGrade()">Calculate Current Grade!</button>
+<div id="currentGrade"> </div>
+<h1> </h1>
+<button class="w3-btn w3-black w3-round" onclick="calculateFinalExamGrade()">Calculate Final Exam Grade Needed!</button>
+<div id="finalGradeNeeded"> </div>
+
+<div id="desiredGrade"> </div>
+
+</body>
+</html>

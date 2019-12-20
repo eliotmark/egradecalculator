@@ -1,0 +1,32 @@
+body {
+    color: black;
+    font-family: Palatino, URW Palladio L, serif;
+    vertical-align: center;
+    text-align: center;
+    background-color: lemonchiffon;
+}
+
+table, th, td {
+    border: 3px solid black;
+    border-collapse: collapse;
+    font-size: 20px;
+}
+
+.title {
+    padding: 10px;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+}
+
+#currentGrade {
+    font-size: 25px;
+}
+
+#finalGradeNeeded {
+    font-size: 25px;
+}
+
+#homeworkGrades, #homeworkWeight, #classworkGrades, #classworkWeight, #testGrades, #testWeight, #participationGrades, #participationWeight, #projectGrades, #projectWeight, #desiredGrade, #finalWeight{
+    text-align: center;
+}
