@@ -39,6 +39,7 @@ function calculateCurrentGrade() {
     if(sumOfAllWeights != 1 || isNaN(finWeight)) {
         message = "The percents you inserted do not add up to 100% or the weight you inserted is not a number. Please enter valid numbers.";
         document.getElementById("currentGrade").innerHTML = message;
+        document.getElementById("finalGradeNeeded").innerHTML = message;
     }else{
         // Calculates end grade of each category.
         var endHw = hwAvg * hwWeight;
@@ -48,7 +49,7 @@ function calculateCurrentGrade() {
         var endProj = projAvg * projWeight;
 
         // Calculates the total grade.
-        var numberOfCurrentGrade = ((endHw + endCw + endTst + endParticip + endProj)/(100 - finWeight) * 100);
+        var numberOfCurrentGrade = ((endHw + endCw + endTst + endParticip + endProj)/(100 - (finWeight*100))) * 100;
         if(isNaN(numberOfCurrentGrade)) {
             message = "The percents you inserted do not add up to 100% or the grade you inserted is not a number. Please enter valid numbers.";
             document.getElementById("currentGrade").innerHTML = message;
@@ -82,7 +83,7 @@ function averageOfArray(arr) {
     return average;
 }
 
-
+// Calculates the final exam grade needed.
 function calculateFinalExamGrade() {
     var message = "";
     // FORMULA: 𝐹=𝐺−((1−𝑤)×𝐶)/𝑤
@@ -108,9 +109,8 @@ function calculateFinalExamGrade() {
     }
 }
 
-
+// Calculates weights of each category.
 function determineCorrectWeights() {
-    // Calculates weights of each category.
     var hwWeight = (parseInt(document.getElementById("homeworkWeight").value))/100;
     var cwWeight = (parseInt(document.getElementById("classworkWeight").value))/100;
     var tstWeight = (parseInt(document.getElementById("testWeight").value))/100;
@@ -120,4 +120,15 @@ function determineCorrectWeights() {
     var sumOfAllWeights = hwWeight + cwWeight + tstWeight + participWeight + projWeight + finWeight;
 
     return sumOfAllWeights;
+}
+
+// Resets all the information.
+function reset() {
+    var inputs = document.getElementsByTagName("input");
+    console.log(inputs);
+    for(var i=0; i<inputs.length; i++) {
+        inputs[i].value = "";
+    }
+    document.getElementById("finalGradeNeeded").innerHTML = '';
+    document.getElementById("currentGrade").innerHTML = '';
 }
