@@ -39,7 +39,6 @@ function calculateCurrentGrade() {
     if(sumOfAllWeights != 1 || isNaN(finWeight)) {
         message = "The percents you inserted do not add up to 100% or the weight you inserted is not a number. Please enter valid numbers.";
         document.getElementById("currentGrade").innerHTML = message;
-        document.getElementById("finalGradeNeeded").innerHTML = message;
     }else{
         // Calculates end grade of each category.
         var endHw = hwAvg * hwWeight;
@@ -100,7 +99,7 @@ function calculateFinalExamGrade() {
     var finalGrade = fourth;
     finalGrade = finalGrade.toFixed(2);
 
-    if(determineCorrectWeights() != 1) {
+    if(determineCorrectWeights() != 1 || isNaN(C)) {
         var message = "The percents you inserted do not add up to 100% or the weight you inserted is not a number. Please enter valid numbers.";
         document.getElementById("finalGradeNeeded").innerHTML = message;
     }else {
